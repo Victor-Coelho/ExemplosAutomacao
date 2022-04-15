@@ -76,9 +76,11 @@ public class Funcionario {
 		case Funcionario.DBA:
 			
 			if(salarioBase >= 2000) 
-				salario = salarioBase - (salarioBase * 0.25f);
+				salario = salarioBase - (salarioBase * 0.20f);
 			else
 				salario = salarioBase - (salarioBase * 0.15f);
+
+			break;
 
 		case Funcionario.GERENTE:
 			

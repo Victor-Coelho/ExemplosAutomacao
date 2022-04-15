@@ -18,6 +18,10 @@ class FuncionarioTest {
 	private static Funcionario funcB;
 	private static Funcionario funcC;
 
+	private static Funcionario funcD;
+
+	private static Funcionario funcE;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		System.out.print("Configurando os testes ... ");
@@ -25,6 +29,8 @@ class FuncionarioTest {
 		funcA = new Funcionario("Fulano de Tal", "fulano@company.com", 5000, Funcionario.DESENVOLVEDOR);
 		funcB = new Funcionario("Cicrano de Tel", "cicrano@company.com", 2500, Funcionario.GERENTE);
 		funcC = new Funcionario("Beltrano de Til", "beltrano@company.com", 550, Funcionario.TESTADOR);
+		funcD = new Funcionario("DBA Menor", "dba@company.com", 1900, Funcionario.DBA);
+		funcE = new Funcionario("DBA Maior", "dba2@company.com", 2500, Funcionario.DBA);
 		
 		System.out.println("OK");
 	}
@@ -81,6 +87,25 @@ class FuncionarioTest {
 			//e.printStackTrace();
 		}
 	}
+
+	@Test
+	void testeDbaMenor() {
+		try {
+			assertEquals(1615, funcD.calculaSalario());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	void testeDbaMaior() {
+		try {
+			assertEquals(2000, funcE.calculaSalario());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	
 	
 }

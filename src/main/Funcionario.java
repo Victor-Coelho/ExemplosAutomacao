@@ -1,5 +1,7 @@
 package main;
 
+import java.util.regex.*;
+
 public class Funcionario {
 
 	public static final String DESENVOLVEDOR = "Desenvolvedor";
@@ -106,4 +108,9 @@ public class Funcionario {
 		return salario;
 	}
 
+	public boolean validateEmail() {
+		Pattern pattern = Pattern.compile(".*@.*\\.com");
+		Matcher matcher = pattern.matcher(email);
+		return matcher.find();
+	}
 }

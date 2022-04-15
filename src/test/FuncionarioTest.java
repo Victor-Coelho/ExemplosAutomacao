@@ -106,6 +106,13 @@ class FuncionarioTest {
 		}
 	}
 
-	
+	@Test
+	void testeFormatoEmail() {
+		try {
+			assertTrue(funcA.validateEmail());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
